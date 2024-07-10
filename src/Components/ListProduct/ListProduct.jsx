@@ -6,7 +6,7 @@ const ListProduct = () => {
   const [allproducts, setAllProducts] = useState([]);
 
   const fetchInfo =  () => {
-     fetch("https://ecom-backend-ghce.onrender.com/allproducts")
+     fetch("https://backend-ovfj.onrender.com/allproducts")
       .then((res) => res.json())
       .then((data) => {
         setAllProducts(data);
@@ -17,7 +17,7 @@ const ListProduct = () => {
     fetchInfo();
   }, []);
   const remove_product = async(id)=>{
-    await fetch('https://ecom-backend-ghce.onrender.com/removeproduct', {
+    await fetch('https://backend-ovfj.onrender.com/removeproduct', {
         method:'POST',
         headers:{
             accept:'application/json',
@@ -41,7 +41,6 @@ const ListProduct = () => {
       <div className="listproduct-allproducts">
         <hr />
         {allproducts.map((product, index) => {
-            // console.log(product);
           return (
             <>
               <div
