@@ -9,6 +9,7 @@ const ListProduct = () => {
      fetch("https://backend-ovfj.onrender.com/allproducts")
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         setAllProducts(data);
       });
   };

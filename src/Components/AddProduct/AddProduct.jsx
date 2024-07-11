@@ -27,7 +27,7 @@ const AddProduct = () => {
         let formData = new FormData()
         formData.append('product', image)
 
-        await fetch('https://backend-ovfj.onrender.com/upload', {
+        await fetch('http://localhost:4000/upload', {
             method:'POST',
             headers:{
                 Accept:'application/json'
@@ -35,6 +35,7 @@ const AddProduct = () => {
             body:formData,
         }).then((res)=>res.json()).then((data)=>responseData = data);
         if (responseData.success){
+          
             product.image = responseData.image_url;
             // console.log(product);
             await fetch('https://backend-ovfj.onrender.com/addproduct', {
